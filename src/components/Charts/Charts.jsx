@@ -1,7 +1,6 @@
 import React,{useState, useEffect} from 'react'
 import {fetchDailyData} from '../../api'
 import {Line,Bar} from 'react-chartjs-2'
-import { StylesProvider } from '@material-ui/core';
 
 import styles from './Chart.module.css'
 
@@ -18,7 +17,7 @@ const Charts = ({data:{confirmed,recovered,deaths}, country}) =>{
     },[]);
 
     const lineChart = (
-        dailyData.length!=0?
+        dailyData.length!==0?
         (<Line
             data={{
                 labels: dailyData.map(({date})=>date),
